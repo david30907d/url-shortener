@@ -1,9 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import OpengraphReactComponent from 'opengraph-react';
 
 const App = () => {
   const [shortUrl, setShortUrl] = useState("");
+  const [longUrl, setLongUrl] = useState("");
 
   const handleShorten = async (event) => {
     async function fetchData(longUrl) {
@@ -14,7 +16,7 @@ const App = () => {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ "longUrl": longUrl})
+          body: JSON.stringify({ "longUrl": longUrl })
         });
         const jsonResponse = await response.json();
         setShortUrl(jsonResponse.shortUrl);
@@ -24,8 +26,17 @@ const App = () => {
     };
     event.preventDefault()
     const longUrl = event.target.elements.longUrl.value
+    setLongUrl(longUrl)
     fetchData(longUrl);
   };
+  let OpengraphDom = <p></p>
+  if (longUrl) {
+    OpengraphDom = <OpengraphReactComponent
+      site={longUrl}
+      appId="a82760be-e6fb-4fa0-96b1-fb17c670fedc"
+      size={'small'}
+    />
+  }
 
 
   return (
@@ -38,9 +49,11 @@ const App = () => {
         </form>
 
         <p>
-          Here's your short URL: 
+          Here's your short URL:
           <a href={shortUrl} target="_blank">{shortUrl}</a>
         </p>
+        {OpengraphDom}
+
       </header>
     </div>
   );

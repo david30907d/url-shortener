@@ -32,7 +32,7 @@ router.post('/shorten', async(req,res)=>{
                     longUrl,
                     shortUrl,
                     urlCode,
-                    date: new Date()
+                    date: new Date(),
                 })
                 await url.save()
                 res.json(url)
