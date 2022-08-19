@@ -24,8 +24,10 @@ Not implemented yet.
 
 ## Demo
 
-
+https://www.loom.com/share/858a5d81fd8f4df089d1791b3c7c2781
 
 ## References
 
-1. https://www.section.io/engineering-education/nodejs-url-shortener/
+1. https://www.npmjs.com/package/opengraph-react
+2. https://stackoverflow.com/questions/69753857/how-do-make-an-api-fetch-request-on-button-click-reactjs
+3. https://www.section.io/engineering-education/nodejs-url-shortener/
