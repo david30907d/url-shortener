@@ -24,6 +24,7 @@ Not implemented yet.
 
 ## Demo
 
+![demo.jpg](demo.jpg)
 https://www.loom.com/share/858a5d81fd8f4df089d1791b3c7c2781
 
 ## References
